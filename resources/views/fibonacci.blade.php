@@ -30,9 +30,16 @@
             </form>
 
             @if(count($lists) > 0)
-
+                @if($lastList = 0) @endif
                 @foreach($lists as $key => $list)
-                    <span class="badge">{{ $list }}</span>
+                    <span class="badge"
+                          @if($list > 0 && $lastList > 0)
+                            style="font-size: {{ ($list / $lastList) + $key }}px"
+                          @else
+                            style="font-size: 2px"
+                          @endif
+                    >{{ $list }}</span>
+                    @if($lastList = $list) @endif
                 @endforeach
             @endif
     </div>
