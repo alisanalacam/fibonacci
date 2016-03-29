@@ -6,14 +6,11 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ExampleTest extends TestCase
 {
-    /**
-     * A basic functional test example.
-     *
-     * @return void
-     */
-    public function testBasicExample()
+    public function testGetFibonacci()
     {
         $this->visit('/')
-             ->see('Laravel 5');
+            ->type('10', 'count')
+            ->press('Listele')
+            ->seePageIs('/');
     }
 }
