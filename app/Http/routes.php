@@ -14,4 +14,5 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', ['as' => 'list.fibonacci', 'uses' => 'FibonacciController@getListOfFibonacci']);
+    Route::post('/', ['as' => 'list.fibonacci.post', 'uses' => 'FibonacciController@getListOfFibonacci']);
 });
