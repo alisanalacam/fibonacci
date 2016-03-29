@@ -16,10 +16,15 @@ composer global require "phpunit/phpunit=5.2.*"
 composer global require "phpunit/php-invoker=~1.1."
 ```
 
+phpunit komutunu kısayol olarak kullanabilmek için;
+```cli
+sudo ln -s  ~/.composer/vendor/phpunit/phpunit/phpunit   /usr/bin/
+```
+yazmanız yeterlidir.
+
 ```cli
 phpunit
 ```
-
 yazarak test işlemini gerçekleştirebilirsiniz.
 
 ## Yardım
