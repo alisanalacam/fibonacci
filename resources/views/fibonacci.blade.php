@@ -1,13 +1,39 @@
 @extends('layout')
 
 @section('content')
-        <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
-        <p>
-            <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
+        <div class="jumbotron">
+            <h1>Fibonacci</h1>
+
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <form class="form-horizontal" method="post">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="count" class="col-sm-2 control-label">Sayı Giriniz</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="count" name="count" placeholder="Sayı">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Listele</button>
+                    </div>
+                </div>
+            </form>
+
+            @if(count($lists) > 0)
+
+                @foreach($lists as $key => $list)
+                    <span class="badge">{{ $list }}</span>
+                @endforeach
+            @endif
     </div>
 @endsection
