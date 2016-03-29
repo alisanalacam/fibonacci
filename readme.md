@@ -3,7 +3,7 @@
 
 Framework ve paketlerin kurulumu için
 
-Eğer composer yüklü değilse; adresinden <a href="https://getcomposer.org/download/" rel="nofollow">Composer</a> yükleyiniz.
+Eğer composer yüklü değilse; <a href="https://getcomposer.org/download/" rel="nofollow">Composer</a> yükleyiniz.
 
 ```cli
 composer install
