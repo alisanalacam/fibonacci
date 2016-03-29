@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 class FibonacciController extends Controller
 {
 
+    /**
+     * Sayı girelecek ekranı ve girilen sayıya göre fibonacci dizisini ekrana badge içinde gösterir
+     *
+     * @param Request $request
+     * @return mixed
+     */
     public function getListOfFibonacci(Request $request)
     {
         $lists = [];
@@ -29,6 +35,14 @@ class FibonacciController extends Controller
         return view('fibonacci', compact('lists'));
     }
 
+    /**
+     * Verilen sayı kadar fibonacci dizisi değeri döndürür.
+     *
+     * @param $count
+     * @param int $first
+     * @param int $second
+     * @return array
+     */
     public function getFibonacciByCount($count, $first = 0, $second = 1)
     {
         $fib = [$first, $second];
